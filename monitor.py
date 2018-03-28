@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 '''
 '''
-outputName = 'monitorSingle.out'
+outputName = 'monitorDouble.out'
 import time
 import subprocess
 

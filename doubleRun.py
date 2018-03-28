@@ -21,8 +21,8 @@ obj_D, obj_S = None, None
 finish_D, finish_S = False, False
 
 while 1:
-    print 'run %d, thread_Dedup %d, thread_Swaptions %d' % (irun, thread_D, thread_S)
     if obj_D == None and obj_S == None:# when nothing is running.
+        print 'run %d, thread_Dedup %d, thread_Swaptions %d' % (irun, thread_D, thread_S)
         cmd_D = '{}parsecmgmt -a run -i native -n {} -p {}'.format(app_bin, thread_D, 'dedup')
         obj_D = subprocess.Popen(cmd_D, stdout=FNULL, shell=True)
         cmd_S = '{}parsecmgmt -a run -i native -n {} -p {} -c gcc-tbb'.format(app_bin, thread_S, 'swaptions')
@@ -53,7 +53,7 @@ while 1:
             irun += 1
         thread_D = 2 ** logthread_D
         thread_S = 2 ** logthread_S
-    if irun = 2:
+    if irun == 20:
         break
     time.sleep(0.1)
 
